@@ -6,6 +6,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -22,11 +23,13 @@ import com.locadora.domain.Cliente;
 import com.locadora.domain.Veiculo;
 import com.locadora.services.AluguelService;
 
+import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 
 @RestController
-
-@RequestMapping("/")
+@RequestMapping(value = "/")
+@Api(value = "API REST aluguel")
+@CrossOrigin(origins = "*")
 
 public class AluguelResource {
 
