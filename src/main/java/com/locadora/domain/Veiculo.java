@@ -10,6 +10,9 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
+import com.locadora.domain.util.MarcaDoVeiculo;
+import com.locadora.domain.util.ModeloDeVeiculo;
+import com.locadora.domain.util.PortasDoVeiculo;
 import com.locadora.domain.util.TipoDeVeiculo;
 
 @Entity
@@ -25,8 +28,12 @@ public class Veiculo implements Serializable{
 	
 	@Enumerated(EnumType.ORDINAL)
 	private TipoDeVeiculo tipoDeVeiculo;
+	private PortasDoVeiculo portasDoVeiculo;
+	private MarcaDoVeiculo marcaDoVeiculo;
+	private ModeloDeVeiculo modeloDeVeiculo;
+	
 
-	public Veiculo(Integer id, String placa, String cor, String chassi, String renavam, TipoDeVeiculo tipoDeVeiculo) {
+	public Veiculo(Integer id, String placa, String cor, String chassi, String renavam, TipoDeVeiculo tipoDeVeiculo, PortasDoVeiculo portasDoVeiculo, MarcaDoVeiculo marcaDoVeiculo, ModeloDeVeiculo modeloDeVeiculo) {
 		super();
 		this.id = id;
 		this.placa = placa;
@@ -34,6 +41,9 @@ public class Veiculo implements Serializable{
 		this.chassi = chassi;
 		this.renavam = renavam;
 		this.tipoDeVeiculo = tipoDeVeiculo;
+		this.portasDoVeiculo = portasDoVeiculo;
+		this.marcaDoVeiculo = marcaDoVeiculo;
+		this.modeloDeVeiculo = modeloDeVeiculo;
 	}
 
 	public TipoDeVeiculo getTipoDeVeiculo() {
@@ -87,6 +97,30 @@ public class Veiculo implements Serializable{
 		this.renavam = renavam;
 	}
 
+	public PortasDoVeiculo getPortasDoVeiculo() {
+		return portasDoVeiculo;
+	}
+
+	public void setPortasDoVeiculo(PortasDoVeiculo portasDoVeiculo) {
+		this.portasDoVeiculo = portasDoVeiculo;
+	}
+
+	public MarcaDoVeiculo getMarcaDoVeiculo() {
+		return marcaDoVeiculo;
+	}
+
+	public void setMarcaDoVeiculo(MarcaDoVeiculo marcaDoVeiculo) {
+		this.marcaDoVeiculo = marcaDoVeiculo;
+	}
+
+	public ModeloDeVeiculo getModeloDeVeiculo() {
+		return modeloDeVeiculo;
+	}
+
+	public void setModeloDeVeiculo(ModeloDeVeiculo modeloDeVeiculo) {
+		this.modeloDeVeiculo = modeloDeVeiculo;
+	}
+	
 	@Override
 	public int hashCode() {
 		return Objects.hash(id);
@@ -103,5 +137,4 @@ public class Veiculo implements Serializable{
 		Veiculo other = (Veiculo) obj;
 		return Objects.equals(id, other.id);
 	}
-
 }
