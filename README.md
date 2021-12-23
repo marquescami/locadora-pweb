@@ -1,4 +1,4 @@
-# locadora-pweb
+# Locadora de veículos PWEB CAR
 
 Backend de uma Locadora de veículos criada para a disciplina de programação web 
 
