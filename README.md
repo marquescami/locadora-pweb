@@ -2,7 +2,7 @@
 
 Backend de uma Locadora de veículos criada para a disciplina de programação web 
 
-- Cadastro de clientes (post, delete, 
+- Cadastro de clientes
 - Cadastro de fornecedores
 - Cadastro de veículos
 - Aluguel de veículo
